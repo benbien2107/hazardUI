@@ -1,0 +1,38 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base circle -->
+    <item android:drawable="@drawable/circle_border" />
+
+    <!-- Highlighted part (adjust the start and end angles to highlight the desired portion) -->
+    <item>
+        <shape
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="2"
+            android:useLevel="false">
+            <solid android:color="@android:color/transparent" />
+            <size
+                android:width="500dp"
+                android:height="500dp" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/black" />
+            <gradient
+                android:startColor="#FF0000"
+                android:endColor="#00FF00"
+                android:angle="0"
+                android:type="sweep"
+                android:useLevel="false"
+                android:centerX="0.5"
+                android:centerY="0.5"
+                android:startX="0.5"
+                android:startY="0.5"
+                android:endX="0.5"
+                android:endY="0.5"
+                android:gradientRadius="360"
+                android:centerColor="#00000000"
+                android:end="45dp"
+                android:start="0dp"
+            />
+        </shape>
+    </item>
+</layer-list>

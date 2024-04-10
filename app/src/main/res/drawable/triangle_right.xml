@@ -1,0 +1,10 @@
+<!-- triangle_left.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="75dp"
+    android:height="75dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M 0,50 L 100,0 L 100,100 Z" />
+</vector>
