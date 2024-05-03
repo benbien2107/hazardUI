@@ -32,16 +32,16 @@ public class HomeFragment extends Fragment {
         textView = view.findViewById(R.id.text_home);
         carImage = view.findViewById(R.id.car_img);
         signals = new ImageView[8];
-
+        //zones = ["right", "front-right", "front", "front-left","left","back-left", "back", "back-right"]
         // go clockwise
-        signals[0] = view.findViewById(R.id.triangle_top);
+        signals[0] = view.findViewById(R.id.triangle_right);
         signals[1] = view.findViewById(R.id.triangle_top_right);
-        signals[2]= view.findViewById (R.id.triangle_right);
-        signals[3] = view.findViewById(R.id.triangle_bottom_right);
-        signals[4] = view.findViewById(R.id.triangle_bottom);
+        signals[2]= view.findViewById (R.id.triangle_top);
+        signals[3] = view.findViewById(R.id.triangle_top_left);
+        signals[4] = view.findViewById(R.id.triangle_left);
         signals[5] = view.findViewById(R.id.triangle_bottom_left);
-        signals[6] = view.findViewById (R.id.triangle_left);
-        signals[7] = view.findViewById(R.id.triangle_top_left);
+        signals[6] = view.findViewById (R.id.triangle_bottom);
+        signals[7] = view.findViewById(R.id.triangle_bottom_right);
 
         for (ImageView sig:signals) {
             sig.setVisibility(View.INVISIBLE);
