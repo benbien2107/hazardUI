@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -51,25 +52,21 @@ public class HomeFragment extends Fragment {
     }
 
     private void manageDisplay(){
-        homeViewModel.test_run();
+//        homeViewModel.test_run();
+
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+
         homeViewModel.getDistance().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer distance) {
                 int color;
-                switch (distance) {
-                    case 0:
-                        color = Color.RED;
-                        break;
-                    case 1:
-                        color = Color.YELLOW;
-                        break;
-                    case 2:
-                        color = Color.GREEN;
-                        break;
-                    default:
-                        color = Color.TRANSPARENT; // or any other default color
-                        break;
+                if (distance <= 1000) {
+                    color = Color.RED;
+                } else if (distance <= 5000) {
+                    color = Color.YELLOW;
+                } else {
+                    color = Color.GREEN;
                 }
                 // Set the color to all signals
                 for (ImageView signal : signals) {
@@ -77,6 +74,7 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
 
         for (int i=0;i<signals.length;i++) {
             homeViewModel.getVisibility(i).observe(getViewLifecycleOwner(),signals[i]::setVisibility);

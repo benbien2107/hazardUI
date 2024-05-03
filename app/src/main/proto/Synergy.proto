@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package test;
+option java_multiple_files = true;
+option java_package = "com.example.hazardui.data";
+option java_outer_classname = "SynergyProto";
+
+
+message SoundObj{
+  optional string name = 1;
+  optional int32 direction = 2;
+  optional string time = 3;
+  optional int32 distance = 4;
+}
+

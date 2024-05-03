@@ -11,8 +11,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+
+
+
 }
 
 rootProject.name = "HazardUI"
 include(":app")
- 

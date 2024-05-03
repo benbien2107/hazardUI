@@ -1,6 +1,10 @@
+import com.google.protobuf.gradle.*
+
 plugins {
     id("com.android.application")
+    id("com.google.protobuf")
 }
+
 
 android {
     namespace = "com.example.hazardui"
@@ -29,6 +33,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    protobuf {
+        protoc {
+            artifact = "com.google.protobuf:protoc:3.19.4"
+        }
+
+        generateProtoTasks {
+            all().configureEach {
+                builtins {
+                    id("java") {
+                        option("lite")
+                    }
+                }
+            }
+        }
+    }
 }
 
 dependencies {
@@ -41,6 +60,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation ("com.google.protobuf:protobuf-javalite:3.21.7")
 }
+
+
